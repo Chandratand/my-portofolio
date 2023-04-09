@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+*::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+*::-webkit-scrollbar-thumb {
+	pointer-events: all;
+	background: #d9d9d9;
+	border-radius: 10px;
+}
+
+* {
+	@apply text-secondary;
+}
+
+@layer base {
+	.bg-gradient {
+		@apply bg-gradient-to-r from-primary to-secondary;
+	}
+	.text-gradient {
+		@apply bg-gradient bg-clip-text text-transparent;
+	}
+}
+
+@layer components {
+	.button-gradient {
+		@apply bg-gradient rounded-full bg-red-100 px-5 py-3 text-sm font-medium text-white sm:text-base;
+	}
+}
+
+@layer utilities {
+	.radial {
+		background: linear-gradient(90deg, #c5dbff 4.77%, rgba(255, 255, 255, 0) 100%);
+		filter: blur(50px);
+		transform: rotate(-7.57deg);
+		z-index: -10;
+		width: 514px;
+		height: 514px;
+		position: absolute;
+		left: -246.63px;
+		top: 115.12px;
+	}
+}
