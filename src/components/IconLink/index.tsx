@@ -11,7 +11,7 @@ type Props = {
 const IconLink = ({ className, iconSrc, href = "#", label }: Props) => {
   return (
     <Link
-      className={`flex place-content-center items-center gap-2 sm:place-content-start ${className}`}
+      className={`flex place-content-center items-center gap-2 dark:text-white sm:place-content-start ${className}`}
       href={href}
     >
       <Image src={iconSrc} alt="icon" width={24} height={24} />

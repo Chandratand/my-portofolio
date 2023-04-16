@@ -15,16 +15,15 @@
 	border-radius: 10px;
 }
 
-* {
-	@apply text-secondary;
-}
-
 @layer base {
 	.bg-gradient {
 		@apply bg-gradient-to-r from-primary to-secondary;
 	}
+	.bg-gradient-text {
+		@apply bg-gradient-to-r from-primary to-secondary dark:to-white;
+	}
 	.text-gradient {
-		@apply bg-gradient bg-clip-text text-transparent;
+		@apply bg-gradient-text bg-clip-text text-transparent;
 	}
 }
 
@@ -45,5 +44,12 @@
 		position: absolute;
 		left: -246.63px;
 		top: 115.12px;
+		border-radius: 427px;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.dark .radial {
+			background: linear-gradient(90deg, #5794f5 4.77%, #000000 100%);
+		}
 	}
 }
