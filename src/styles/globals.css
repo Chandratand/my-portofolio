@@ -25,6 +25,15 @@
 	.text-gradient {
 		@apply bg-gradient-text bg-clip-text text-transparent;
 	}
+	.header {
+		@apply text-[32px] font-bold sm:text-5xl;
+	}
+	.title {
+		@apply font-semibold sm:text-xl;
+	}
+	.body {
+		@apply text-sm sm:text-base;
+	}
 }
 
 @layer components {
@@ -41,7 +50,7 @@
 		z-index: -10;
 		width: 514px;
 		height: 514px;
-		position: absolute;
+		position: fixed;
 		left: -246.63px;
 		top: 115.12px;
 		border-radius: 427px;

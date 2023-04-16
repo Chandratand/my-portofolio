@@ -15,7 +15,7 @@ const IconLink = ({ className, iconSrc, href = "#", label }: Props) => {
       href={href}
     >
       <Image src={iconSrc} alt="icon" width={24} height={24} />
-      <p className="text-sm sm:text-base">{label}</p>
+      <p className="body">{label}</p>
     </Link>
   );
 };
