@@ -1,7 +1,10 @@
 import "@/styles/globals.css";
-import type { AppProps } from "next/app";
 import { Poppins } from "@next/font/google";
 import { ThemeProvider } from "next-themes";
+import type { AppProps } from "next/app";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,10 +13,25 @@ const poppins = Poppins({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    AOS.init({
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+    });
+  }, []);
+
   return (
     <ThemeProvider enableSystem attribute="class">
-      <main className={`${poppins.variable} font-sans`}>
+      <main
+        className={`${poppins.variable} relative overflow-hidden font-sans`}
+      >
         <Component {...pageProps} />
+        <div className="radial" />
       </main>
     </ThemeProvider>
   );
